@@ -22,9 +22,12 @@ public class EnemyStats : MonoBehaviour
 
     public void TakeDamege(float damage)
     {
-        currentHealt -= damage;
+        currentHealth -= damage;
 
-
-
+        if (currentHealth <= 0)
+        {
+            currentHealth = 0;
+            Destroy(gameObject);
+        }
     }
 }
